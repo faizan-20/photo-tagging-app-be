@@ -2,7 +2,7 @@ const CharacterInformation = require('../models/characterInformation');
 const asyncHandler = require('express-async-handler');
 
 exports.character_list = asyncHandler(async (req, res, next) => {
-    const allCharacters = await CharacterInformation.find({}).exec();
+    const allCharacters = await CharacterInformation.find({}).sort({character: 1}).exec();
     res.json(allCharacters);
 });
 
