@@ -6,6 +6,11 @@ exports.character_list = asyncHandler(async (req, res, next) => {
     res.json(allCharacters);
 });
 
+exports.character_detail = asyncHandler(async (req, res, next) => {
+    const character = await CharacterInformation.findById(req.params.id).exec();
+    res.json(character);
+});
+
 exports.character_create_post = asyncHandler(async (req, res, next) => {
     const character = new CharacterInformation ({
         character: req.body.character,
