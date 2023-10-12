@@ -7,6 +7,7 @@ const CharacterInformationSchema = new Schema({
   xRight: { type: Number, required: true },
   yUp: { type: Number, required: true },
   yDown: { type: Number, required: true },
+  img: { type: String, required: true },
 });
 
 module.exports = mongoose.model("CharacterInformation", CharacterInformationSchema);

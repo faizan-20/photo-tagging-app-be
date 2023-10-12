@@ -18,6 +18,7 @@ exports.character_create_post = asyncHandler(async (req, res, next) => {
         xRight: req.body.xRight,
         yUp: req.body.yUp,
         yDown: req.body.yDown,
+        img: req.body.img,
     });
 
     await character.save();
